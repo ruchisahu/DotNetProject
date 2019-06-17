@@ -1,0 +1,27 @@
+﻿@model TaskStatus.Models.Task
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Task Id</th>
+            <th>Task Status</th>
+            <th>Action</th>
+            <th>Decision</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in ViewBag.List)
+        {
+        <tr>
+            <td>@employee.TaskId</td>
+            <td>@employee.Task_Status</td>
+            <td><a href="" id="@employee.TaskId" class="btn btn-danger">Approve</a></td>
+            <td><a href="" id="@employee.TaskId" class="btn btn-danger">Reject</a></td>
+            <td><a href="" id="@employee.TaskId" class="btn btn-danger">Audit</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

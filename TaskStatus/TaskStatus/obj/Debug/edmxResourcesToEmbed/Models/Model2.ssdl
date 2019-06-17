@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TestDatabaseModelStoreContainer">
+    <EntitySet Name="Depatments" EntityType="TestDatabaseModel.Store.Depatments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Emps" EntityType="TestDatabaseModel.Store.Emps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tasks" EntityType="TestDatabaseModel.Store.Tasks" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Depatments">
+    <Key>
+      <PropertyRef Name="Dept_Id" />
+    </Key>
+    <Property Name="Dept_Id" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Depatment1" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Emps">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Age" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="Department" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="int" Nullable="false" />
+    <Property Name="Task_Status" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+</Schema>
